@@ -1,4 +1,5 @@
 import { Document, Model, Schema, model } from "mongoose";
+import mongoose from "mongoose";
 
 interface ISocialAccount extends Document {
   userId: Schema.Types.ObjectId;

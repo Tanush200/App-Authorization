@@ -9,7 +9,10 @@ export async function GET() {
     "redirect_uri",
     redirectUri
   );
-  authUrl.searchParams.append("scope", "r_liteprofile w_member_social");
+    authUrl.searchParams.append(
+      "scope",
+      "r_liteprofile r_emailaddress w_member_social"
+    );
   authUrl.searchParams.append("state", crypto.randomUUID());
 
   return NextResponse.redirect(authUrl.toString());
