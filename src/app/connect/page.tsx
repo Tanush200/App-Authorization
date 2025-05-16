@@ -22,6 +22,9 @@ export default function ConnectLinkedIn() {
       >
         Connect LinkedIn Account
       </button>
+      <button>
+        <a href=" https://www.linkedin.com/uas/login?session_redirect=%2Foauth%2Fv2%2Flogin-success%3Fapp_id%3D223167292%26auth_type%3DAC%26flow%3D%257B%2522state%2522%253A%2522dfsgsdgsdgsdgs%2522%252C%2522creationTime%2522%253A1747416809059%252C%2522scope%2522%253A%2522profile%2522%252C%2522appId%2522%253A223167292%252C%2522authorizationType%2522%253A%2522OAUTH2_AUTHORIZATION_CODE%2522%252C%2522redirectUri%2522%253A%2522http%253A%252F%252Flocalhost%253A3000%252Fapi%252Fauth%252Flinkedin%252Fcallback%2522%252C%2522currentStage%2522%253A%2522LOGIN_SUCCESS%2522%252C%2522currentSubStage%2522%253A0%252C%2522authFlowName%2522%253A%2522generic-permission-list%2522%257D&fromSignIn=1&trk=oauth&cancel_redirect=%2Foauth%2Fv2%2Flogin-cancel%3Fapp_id%3D223167292%26auth_type%3DAC%26flow%3D%257B%2522state%2522%253A%2522dfsgsdgsdgsdgs%2522%252C%2522creationTime%2522%253A1747416809059%252C%2522scope%2522%253A%2522profile%2522%252C%2522appId%2522%253A223167292%252C%2522authorizationType%2522%253A%2522OAUTH2_AUTHORIZATION_CODE%2522%252C%2522redirectUri%2522%253A%2522http%253A%252F%252Flocalhost%253A3000%252Fapi%252Fauth%252Flinkedin%252Fcallback%2522%252C%2522currentStage%2522%253A%2522LOGIN_SUCCESS%2522%252C%2522currentSubStage%2522%253A0%252C%2522authFlowName%2522%253A%2522generic-permission-list%2522%257D"></a>
+      </button>
     </div>
   );
 }

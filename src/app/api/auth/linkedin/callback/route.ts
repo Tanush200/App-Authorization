@@ -8,10 +8,13 @@ import { getToken } from "next-auth/jwt";
 export async function GET(req: NextRequest) {
   try {
     await connectDB();
-    const redirectUri = "http://localhost:3000/api/auth/linkedin/callback";
+    const redirectUri =
+      "http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Flinkedin%2Fcallback";
     const { searchParams } = new URL(req.url);
     const code = searchParams.get("code");
     const error = searchParams.get("error");
+    console.log(searchParams);
+    
 
     if (error) return NextResponse.redirect(`/?error=${error}`);
     if (!code) return NextResponse.redirect("/?error=no_code");
