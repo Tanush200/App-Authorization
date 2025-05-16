@@ -11,6 +11,7 @@ interface LinkedInTokenResponse {
 export async function GET(req: NextRequest) {
   try {
     await connectDB();
+    const redirectUri = "http://localhost:3000/api/auth/linkedin/callback";
 
     const { searchParams } = new URL(req.url);
     const code = searchParams.get("code");
@@ -35,8 +36,7 @@ export async function GET(req: NextRequest) {
           code,
           client_id: process.env.LINKEDIN_CLIENT_ID!,
           client_secret: process.env.LINKEDIN_CLIENT_SECRET!,
-          redirect_uri: `${process.env
-            .NEXTAUTH_URL!}/api/auth/linkedin/callback`,
+          redirect_uri: redirectUri,
         }),
       }
     );
