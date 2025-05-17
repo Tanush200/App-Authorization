@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const redirectUri = "http://localhost:3000/api/auth/linkedin/callback";
+  const redirectUri = "https://portfolio-one-beryl-85.vercel.app";
   const authUrl = new URL("https://www.linkedin.com/oauth/v2/authorization");
   authUrl.searchParams.append("response_type", "code");
   authUrl.searchParams.append("client_id", process.env.LINKEDIN_CLIENT_ID!);
@@ -9,10 +9,7 @@ export async function GET() {
     "redirect_uri",
     redirectUri
   );
-    authUrl.searchParams.append(
-      "scope",
-      "r_liteprofile r_emailaddress w_member_social"
-    );
+ authUrl.searchParams.append("scope", "openid profile email");
   authUrl.searchParams.append("state", crypto.randomUUID());
 
   return NextResponse.redirect(authUrl.toString());

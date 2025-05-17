@@ -1,6 +1,21 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+
 export default function ConnectLinkedIn() {
+  const searchParams = useSearchParams()
+
+    useEffect(() => {
+      const error = searchParams.get("error");
+      if (error === "linkedin_scope_not_approved") {
+        // Show user-friendly message about permissions
+        alert(
+          "We need additional permissions from LinkedIn to connect your account. Please contact support or try again later."
+        );
+        // Or use a toast notification or modal instead of alert
+      }
+    }, [searchParams]);
   const connectLinkedIn = () => {
     const width = 600;
     const height = 600;
